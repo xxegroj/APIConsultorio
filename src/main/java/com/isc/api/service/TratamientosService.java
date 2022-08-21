@@ -15,6 +15,9 @@ public class TratamientosService {
    public Tratamientos crearTratamientos(Tratamientos tratamientos){
        return (Tratamientos) tratamientosRepository.save(tratamientos);
    }
+   public Tratamientos editarTratamientos(Tratamientos tratamientos){
+       return (Tratamientos) tratamientosRepository.save(tratamientos);
+   }
     public List<Tratamientos> listTratamientos(){
 
        return tratamientosRepository.findAll();

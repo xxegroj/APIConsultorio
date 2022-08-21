@@ -14,6 +14,7 @@ public class PacientesService {
     public Pacientes crearPacientes(Pacientes pacientes){
         return pacientesRepository.save(pacientes);
     }
+    public Pacientes editarPacientes(Pacientes pacientes){return pacientesRepository.save(pacientes);}
     public List<Pacientes> listPacientes(){
         return pacientesRepository.findAll();
     }

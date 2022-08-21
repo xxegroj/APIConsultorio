@@ -13,6 +13,7 @@ public class PagosService {
     public Pagos crearPagos(Pagos pagos){
         return pagosRepository.save(pagos);
     }
+    public Pagos editarPagos(Pagos pagos){return pagosRepository.save(pagos);}
     public List<Pagos> listPagos(){
         return pagosRepository.findAll();
     }

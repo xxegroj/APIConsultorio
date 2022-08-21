@@ -14,10 +14,16 @@ public class UsuariosService {
     public Usuarios crearUsuarios(Usuarios usuarios){
         return usuariosRepository.save(usuarios);
     }
+    public Usuarios editarUsuario(Usuarios usuarios){return usuariosRepository.save(usuarios);}
+    public Usuarios eliminarUsuarios(Usuarios usuarios){
+        usuarios.setEstado("inactivo");
+        return usuariosRepository.save(usuarios);
+    }
     public List<Usuarios> listUsuarios(){
         return usuariosRepository.findAll();
     }
-    public List<Usuarios> listUsuariosEtado(String estado){
+    public List<Usuarios> listUsuariosEstado(String estado){
+
         return usuariosRepository.listUsuariosEstado(estado);
     }
 }

@@ -2,6 +2,7 @@ package com.isc.api.controller;
 
 
 import com.isc.api.model.Pacientes;
+import com.isc.api.model.Usuarios;
 import com.isc.api.service.PacientesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +24,14 @@ public class PacientesController {
     @GetMapping("/all")
     public List<Pacientes> listPacientes(){
         return pacientesService.listPacientes();
+    }
+    @PutMapping("/edit")
+    public Pacientes editPacintes(@RequestBody Pacientes pacientes){
+        return pacientesService.editarPacientes(pacientes);
+    }
+    @GetMapping("/list/{estado}")
+    public List<Pacientes> listPacientesEstado(@PathVariable String estado){
+        return pacientesService.listPacientesEstado(estado);
     }
 
 }

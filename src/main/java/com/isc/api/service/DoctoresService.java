@@ -14,6 +14,7 @@ private DoctoresRepository doctoresRepository;
 public Doctores crearDoctores(Doctores doctores){
     return doctoresRepository.save(doctores);
 }
+public Doctores editarDoctores(Doctores doctores){return doctoresRepository.save(doctores);}
 public List<Doctores> listDoctores(){
     return doctoresRepository.findAll();
 }

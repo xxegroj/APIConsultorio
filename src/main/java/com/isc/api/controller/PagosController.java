@@ -2,6 +2,7 @@ package com.isc.api.controller;
 
 import com.isc.api.model.Pacientes;
 import com.isc.api.model.Pagos;
+import com.isc.api.model.Usuarios;
 import com.isc.api.service.PacientesService;
 import com.isc.api.service.PagosService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +26,14 @@ public class PagosController {
     public List<Pagos> listPagos(){
 
         return pagosService.listPagos();
+    }
+    @PutMapping("/edit")
+    public Pagos editPagos(@RequestBody Pagos pagos){
+        return pagosService.editarPagos(pagos);
+    }
+    @GetMapping("/list/{estado}")
+    public List<Pagos> listPagosEstado(@PathVariable String estado){
+        return pagosService.listPagosEstado(estado);
     }
 
 }

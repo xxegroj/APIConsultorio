@@ -15,10 +15,22 @@ public class UsuariosController {
     private UsuariosService usuariosService;
     @PostMapping("/add")
     public Usuarios addUsuarios(@RequestBody Usuarios usuarios){
+
         return usuariosService.crearUsuarios(usuarios);
     }
     @GetMapping("all")
     public List<Usuarios> listUsuarios(){
         return  usuariosService.listUsuarios();
+    }
+    @PutMapping("/edit")
+    public  Usuarios editUsuarios(@RequestBody Usuarios usuarios){
+        return usuariosService.editarUsuario(usuarios);}
+    @GetMapping("/list/{estado}")
+    public List<Usuarios> listUsuariosEstado(@PathVariable String estado){
+        return usuariosService.listUsuariosEstado(estado);
+    }
+    @DeleteMapping("/remove")
+    public Usuarios eliminarUsuarios(@RequestBody Usuarios usuarios){
+        return usuariosService.eliminarUsuarios(usuarios);
     }
 }
