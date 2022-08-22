@@ -26,4 +26,7 @@ public class UsuariosService {
 
         return usuariosRepository.listUsuariosEstado(estado);
     }
+    public String encriptarLogin(String clave){
+        return usuariosRepository.encriptarLogin(clave);
+    }
 }
