@@ -33,8 +33,8 @@ public class UsuariosController {
     public Usuarios eliminarUsuarios(@RequestBody Usuarios usuarios){
         return usuariosService.eliminarUsuarios(usuarios);
     }
-    @GetMapping("/encriptar/{clave}")
-    public String encriptarMD5(@PathVariable String clave){
-        return usuariosService.encriptarLogin(clave);
+    @GetMapping("/login")
+    public Boolean encriptarMD5(@RequestParam(name = "dni") String dni, @RequestParam(name = "clave") String clave){
+        return usuariosService.loginUser(dni,clave);
     }
 }

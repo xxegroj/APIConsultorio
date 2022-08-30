@@ -11,4 +11,8 @@ public interface UsuariosRepository extends JpaRepository<Usuarios,Integer> {
     List<Usuarios> listUsuariosEstado(String estado);
     @Query(value = "select md5(sha1(?1))",nativeQuery = true)
     public String encriptarLogin(String clave);
+
+    @Query(value = "Select u From Usuarios u where  u.dni = ?1 AND u.clave = ?2 AND u.estado = 'activo'")
+    public Usuarios loginUsuario(String dni, String clave);
 }
+

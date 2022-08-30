@@ -29,4 +29,9 @@ public class UsuariosService {
     public String encriptarLogin(String clave){
         return usuariosRepository.encriptarLogin(clave);
     }
+    public Boolean loginUser(String dni, String passw){
+        String clave= usuariosRepository.encriptarLogin(passw);
+        Usuarios user= usuariosRepository.loginUsuario(dni,clave);
+        return user!=null;
+    }
 }
